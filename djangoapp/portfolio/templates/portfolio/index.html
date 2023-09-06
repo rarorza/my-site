@@ -1,11 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Portfolio</h1>
-</body>
-</html>
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block title %}Portfolio{% endblock title %}
+
+{% block head %}
+<link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="{% static 'global/css/style.css' %}">
+{% endblock head %}
+
+{% block content %}
+<section aria-label="Section, resume download and social links" class="selection-div" id="home">
+    <div>
+      <h2>Hello! I am</h2>
+      <h2 class="typing">Back End Developer</h2>
+      <div class="links">
+        <a href="#" download="Rafael_Rosa"><i
+            class="fa-solid fa-file-arrow-down"></i>CV</a>
+        <a href="https://br.linkedin.com/in/rarorza" target="_blank" rel="noreferrer"><i
+            class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
+        <a href="https://github.com/rarorza" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
+      </div>
+    </div>
+    <img src="{% static 'global/img/sample.png' %}" alt="Illustrative image of a man's face" />
+  </section>
+  <main>
+    <article aria-label="About me section" class="about-me" id="about-me">
+      <div class="about_me_title">
+        <h2>About me</h2>
+        <p>Professional profile</p>
+        <div aria-label="Buttons illustrations section">
+          <span></span>
+        </div>
+      </div>
+      <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person" />
+      <div class="about_me_content">
+        <div class="about_me_text">
+          <h1>I am Rafael</h1>
+          <p>
+            I have a degree in Law and I'm currently studying Software Analysis and Development. My expertise lies in back-end development, although I also have some knowledge of front-end.
+            <br />
+            <br />
+            I have experience in support, and I currently work as a freelance on some projects.
+            <br />
+            <br />
+            I recently started a blog to discuss various topics (technology, games, movies, etc.) and practice my English. Feel free to engage in the comments or send me an email :)
+          </p>
+        </div>
+        <div class="sobre_info">
+          <p>
+            <i class="fa-solid fa-calendar-days"></i>Birth: 20 nov 1998
+          </p>
+          <p>
+            <i class="fa-sharp fa-solid fa-laptop-code"></i>Code:
+            Python, Java
+          </p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i>From: São Paulo, Brazil
+          </p>
+          <p>
+            <i class="fa-sharp fa-solid fa-globe"></i>Languages:
+            Portuguese and English
+          </p>
+          <p><i class="fa-solid fa-envelope"></i>Email: rarorza@proton.me</p>
+        </div>
+      </div>
+    </article>
+  </main>
+  <!-- Resume -->
+  <div class="my_resume" id="resume">
+    <div class="about_me_title">
+      <h2>Resume</h2>
+      <p>A brief summary of my professional and academic experiences</p>
+      <div aria-label="Buttons illustrations section">
+        <span></span>
+      </div>
+    </div>
+    <div class="resume_general">
+      <h2 class="experience"></i>CAREER</h2>
+      <div class="experience_content">
+        <div>
+          <span>2023-202X</span>
+          <h3>Back-End Developer Freelancer</h3>
+          <p>I currently work as a freelancer, creating Python-based automations and APIs</p>
+        </div>
+        <div>
+          <span>2019-2021</span>
+          <h3>Customer Experience - Mercado Livre</h3>
+          <p>My most recent formal experience, where I had the opportunity to conduct training sessions, analyze metrics, and mediate conflicts.</p>
+        </div>
+        <div>
+          <span>2017-2018</span>
+          <h3>Support Rescue - NSX</h3>
+          <p>My first opportunity in the IT market, working with JIRA and MySQL databases.</p>
+        </div>
+        <ul>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+        </ul>
+      </div>
+      <h2 class="education"></i>EDUCATION</h2>
+      <div class="education_content">
+        <div>
+          <span>2022 - 2024</span>
+          <h3>Systems Analysis and Development</h3>
+          <p>I returned to the programming world, aiming to enhance my knowledge with the goal of becoming a back-end developer.</p>
+        </div>
+        <div>
+          <span>2017 - 2022</span>
+          <h3>Degree in Law</h3>
+          <p>I had the opportunity to pursue a degree in Law through a scholarship, so I took a break from my IT career.</p>
+        </div>
+        <div>
+          <span>2014 - 2016</span>
+          <h3>Technical Maintenance and Support in IT</h3>
+          <p>I started programming here, working on academic projects using VB and C languages with Arduino.</p>
+        </div>
+        <ul>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <section class="projects" id="projects">
+    <div class="about_me_title">
+      <h2>Projects</h2>
+      <p>My projects</p>
+      <div aria-label="Project grid section">
+        <span></span>
+      </div>
+    </div>
+    <div class="projects_models">
+      <ul aria-label="Navigation between project-specific templates">
+        <li class="all">All</li>
+        <li class="backend">Back End</li>
+        <!-- <li class="data">Data Science</li>
+        <li class="ia">IA</li>
+        <li class="ia">Games</li> -->
+      </ul>
+    </div>
+    <div class="projects_storage">
+      <ul>
+        {% comment %} This is a temporary solution, need a model "project" to make dynamic grid {% endcomment %}
+        <li id="backend">
+          <div class="container">
+            <img src="{% static 'global/img/projects/DEVChat.png' %}" alt="Description">
+            <p><strong>DEV Chat</strong><br>A forum with post system and login management. <br>Developed with <strong>Flask</strong>, <strong>SQLite</strong>, and <strong>Bootstrap</strong>.</p>
+            <span><a href="#">App</a></span>
+            <span><a href="https://github.com/rarorza/DEVChat" target="_blank" rel="noreferrer">GitHub</a></span>
+          </div>
+        </li>
+        <li id="backend">
+            <div class="container">
+              <img src="{% static 'global/img/projects/PWDVault.png' %}" alt="Description">
+              <p><strong>Password Vault</strong><br>Um gerenciador de senhas, com sistema de login. <br>Desenvolvido com <strong>Flask</strong>, <strong>SQLite</strong> e <strong>Bootstrap</strong>, utilizando padrão MVC.</p>
+              <span><a href="#" target="_blank" rel="noreferrer">App</a></span>
+              <span><a href="https://github.com/rarorza/password_vault" target="_blank" rel="noreferrer">GitHub</a></span>
+            </div>
+        </li>
+        <li id="backend">
+          <div class="container">
+            <img src="{% static 'global/img/projects/sample.png' %}" alt="Description">
+            <p><strong>My blog</strong><br>Is one of my personal projects, built with <strong>Django</strong>, <strong>PostgreSQL</strong>, and <strong>Docker</strong>."</p>
+            <span><a href="#">App</a></span>
+            <span><a href="#">GitHub</a></span>
+          </div>
+        </li>
+        <li id="backend">
+          <div class="container">
+            <img src="{% static 'global/img/projects/sample.png' %}" alt="Description">
+            <p>Coming Soon</p>
+            <span><a href="#">App</a></span>
+            <span><a href="#">GitHub</a></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <script src="{% static 'global/js/script.js' %}"></script>
+{% endblock content %}
