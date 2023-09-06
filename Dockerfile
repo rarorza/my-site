@@ -28,7 +28,7 @@ RUN python -m venv /venv && \
 
 ENV PATH="/scripts:/venv/bin:$PATH"
 
-USER rarorza
+# USER rarorza
 
 # Executa o arquivo scripts/commands.sh
 CMD ["commands.sh"]
