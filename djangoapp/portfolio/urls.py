@@ -1,9 +1,9 @@
 from django.urls import path
-
-from .views import index
+from portfolio import views
 
 app_name = "portfolio"
 
 urlpatterns = [
-    path("", index, name="index-home"),
+    path("", views.index, name="index-portfolio"),
+    path("<slug:slug>", views.category, name="category"),
 ]

@@ -3,6 +3,25 @@ from utils.random_slug import slugify_new
 from utils.resize_image import resize_image
 
 
+class Category(models.Model):
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(
+        unique=True, default=None, null=True, blank=True, max_length=255
+    )
+
+    def save(self, *args, **kwargs) -> None:
+        if not self.slug:
+            self.slug = slugify_new(self.name)
+        return super().save(*args, **kwargs)
+
+    def __str__(self) -> str:
+        return self.name
+
+
 class ProjectPortfolio(models.Model):
     class Meta:
         verbose_name = "ProjectPortfolio"
@@ -22,8 +41,11 @@ class ProjectPortfolio(models.Model):
         blank=True,
         default="",
     )
-    repository_link = models.CharField(max_length=2048)
-    deploy_link = models.CharField(max_length=2048)
+    repository_link = models.CharField(max_length=2048, null=True, blank=True)
+    deploy_link = models.CharField(max_length=2048, null=True, blank=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, blank=True, default=None
+    )
     is_published = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs) -> None:

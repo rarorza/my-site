@@ -2,13 +2,13 @@
     <h1>Rafael <span>Rosa</span></h1>
     <nav>
       <ul aria-label="Prymary navigation" class="primary-navigation">
-        {% if request.resolver_match.url_name == "index-home" %}
+        {% if request.resolver_match.url_name == "index-portfolio" %}
           <li><a href="#home">Home</a></li>
           <li><a href="#about-me">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact-me">Contact</a></li>
         {% else %}
-          <li><a href="{% url 'portfolio:index-home' %}">Home</a></li>
+          <li><a href="{% url 'portfolio:index-portfolio' %}">Home</a></li>
         {% endif %}
         <li><a href="{% url 'blog:index-blog' %}">Blog</a></li>
       </ul>
