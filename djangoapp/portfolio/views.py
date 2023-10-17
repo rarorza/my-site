@@ -1,16 +1,33 @@
-from django.shortcuts import render
-from portfolio.models import Category, ProjectPortfolio
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from portfolio.forms import ContactForm
+from portfolio.models import ProjectPortfolio
+from utils.email_sender import send_email
 
 
 # Create your views here.
 def index(request):
     projects = ProjectPortfolio.objects.all()
-    categories = Category.objects.all()
-    context = {"projects": projects, "categories": categories}
-    return render(request, "portfolio/index.html", context=context)
 
+    if request.method == "POST":
+        form = ContactForm(data=request.POST)
+        if form.is_valid():
+            name = str(form.cleaned_data["name"]).strip()
+            email = str(form.cleaned_data["email"]).strip()
+            content = str(form.cleaned_data["content"]).strip()
+            was_sent = send_email(name, email, content)
 
-def category(request, slug):
-    categories = ProjectPortfolio.objects.filter(category__name=slug)
-    context = {"categories": categories}
+            if was_sent:
+                messages.success(request, "Email successfully sent!")
+                return redirect("portfolio:index-portfolio")
+            else:
+                messages.error(
+                    request,
+                    "Unable to send, please contact me via email:\
+                    rarorza@proton.me",
+                )
+    else:
+        form = ContactForm()
+
+    context = {"projects": projects, "form": form}
     return render(request, "portfolio/index.html", context=context)

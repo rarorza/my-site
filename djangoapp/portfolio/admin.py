@@ -1,5 +1,5 @@
 from django.contrib import admin
-from portfolio.models import Category, ProjectPortfolio
+from portfolio.models import Category, Contact, ProjectPortfolio
 
 
 # Register your models here.
@@ -16,3 +16,8 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
     list_display_links = ("name",)
     prepopulated_fields = {"slug": ("name",)}
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    ...

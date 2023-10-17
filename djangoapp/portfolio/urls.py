@@ -5,5 +5,4 @@ app_name = "portfolio"
 
 urlpatterns = [
     path("", views.index, name="index-portfolio"),
-    path("<slug:slug>", views.category, name="category"),
 ]

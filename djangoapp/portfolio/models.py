@@ -71,3 +71,13 @@ class ProjectPortfolio(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Contact(models.Model):
+    class Meta:
+        verbose_name = "Contact"
+        verbose_name_plural = "Contacts"
+
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    content = models.TextField()

@@ -26,6 +26,7 @@
     <img src="{% static 'global/img/sample.png' %}" alt="Illustrative image of a man's face" />
   </section>
   <main>
+    {% include "global/partials/messages.html" %}
     <article aria-label="About me section" class="about-me" id="about-me">
       <div class="about_me_title">
         <h2>About me</h2>
@@ -134,20 +135,64 @@
         <span></span>
       </div>
     </div>
-    <div class="projects_models">
-      {% comment %} <ul aria-label="Navigation between project-specific templates">
+    {% comment %} <div class="projects_models">
+      <ul aria-label="Navigation between project-specific templates">
         <li class="all">All</li>
         <li class="backend">Back End</li>
         <li class="data">Data Science</li>
         <li class="ia">IA</li>
         <li class="ia">Games</li>
-      </ul> {% endcomment %}
-    </div>
+      </ul>
+    </div> {% endcomment %}
     <div class="projects_storage">
       <ul>
         {% include "portfolio/partials/project.html" %}
       </ul>
     </div>
+  </section>
+  
+  <section class="contact" id="contact-me">
+    <div class="about_me_title">
+      <h2>Contact</h2>
+      <p>Send me a email</p>
+      <div aria-label="Project grid section">
+        <span></span>
+      </div>
+    </div>
+    
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="form-content">
+        {% for field in form %}
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{field.label}}</label>
+            {{ field }}
+            {{ field.errors }}
+
+            {% if field.help_text %}
+              <p class="help-text">{{ field.help_text }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+    {% if form.non_field_errors %}
+      <div class="form-content">
+          <div class="form-group">
+            <div class="message error">
+              {{ form.non_field_errors }}
+            </div>
+          </div>
+      </div>
+    {% endif %}
+
+      <div class="form-content">
+        <div class="form-group">
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+
   </section>
   <script src="{% static 'global/js/script.js' %}"></script>
 {% endblock content %}
