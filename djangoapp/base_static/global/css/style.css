@@ -7,6 +7,7 @@
   --default-border-radius: 4px;
   --transition-fast: 300ms;
   --clr-white: rgb(245, 245, 255);
+  --clr-white-main: #f8fafc;
   --link-dark-color: rgb(0, 83, 134);
 }
 
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-  background-color: #f8fafc;
+  background-color: var(--clr-white-main);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -39,7 +40,7 @@ header {
 }
 
 header {
-  background-color: #f8fafc;
+  background-color: var(--clr-white-main);
   padding: 10px;
   display: flex;
   align-items: center;
@@ -91,7 +92,7 @@ header .fa-bars {
 
 /* DOWNLOAD CV SECTION */
 .selection-div {
-  background-color: #f8fafc;
+  background-color: var(--clr-white-main);
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
@@ -160,7 +161,7 @@ div .links {
 
 main {
   /* background-color: #f1f5f9; */
-  /* background: linear-gradient(to bottom, #f8fafc, #f1f5f9); */
+  /* background: linear-gradient(to bottom, var(--clr-white-main), #f1f5f9); */
   color: #020617;
 }
 
@@ -277,7 +278,7 @@ main .about-me {
   margin-top: -30px;
   padding: 60px;
   /* background-color: #f1f5f9; */
-  background: linear-gradient(to top, #f8fafc, #f1f5f9);
+  background: linear-gradient(to top, var(--clr-white-main), #f1f5f9);
 }
 
 .my_services {
@@ -514,7 +515,7 @@ main .about-me {
   display: grid;
   justify-content: center;
   gap: 30px;
-  background-color: #f8fafc;
+  background-color: var(--clr-white-main);
 }
 
 .projects ul {
@@ -527,9 +528,9 @@ main .about-me {
   cursor: pointer;
   font-size: "Poppins";
   background-color: #0c4a6e;
-  border: 1px solid #f8fafc;
+  border: 1px solid var(--clr-white-main);
   padding: 6px 20px;
-  color: #f8fafc;
+  color: var(--clr-white-main);
   border-radius: 3px;
   font-size: 1.2rem;
 }
@@ -588,22 +589,22 @@ main .about-me {
   text-decoration: none;
   justify-self: center;
   padding: 20px 40px;
-  border: 1px solid #f8fafc;
-  color: #f8fafc;
+  border: 1px solid var(--clr-white-main);
+  color: var(--clr-white-main);
   border-radius: 3px;
 }
 
 .container a {
   margin: 0;
   padding: 0;
-  background-color: #f8fafc;
+  background-color: var(--clr-white-main);
   color: #020617;
 }
 
 /* FOOTER */
 footer {
   /* background-color: #f1f5f9; */
-  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  background: linear-gradient(to bottom, var(--clr-white-main), #f1f5f9);
   padding: 30px;
 }
 
@@ -620,7 +621,7 @@ footer {
 .footer_sociais li {
   background-color: #0c4a6e;
   border-radius: 50%;
-  border: 1px solid #f8fafc;
+  border: 1px solid var(--clr-white-main);
 }
 
 .footer_sociais li i {
