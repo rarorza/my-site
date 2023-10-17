@@ -16,10 +16,10 @@ RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip && \
   /venv/bin/pip install -r /djangoapp/requirements.txt && \
   adduser --disabled-password --no-create-home rarorza && \
-  mkdir -p /data/web/static && \
+  mkdir -p /data/web/static/admin && \
   mkdir -p /data/web/media && \
   chown -R rarorza:rarorza /venv && \
-  chown -R rarorza:rarorza /data/web/static && \
+  chown -R rarorza:rarorza /data/web/static/admin && \
   chown -R rarorza:rarorza /data/web/media && \
   chmod -R 755 /data/web/static && \
   chmod -R 755 /data/web/media && \

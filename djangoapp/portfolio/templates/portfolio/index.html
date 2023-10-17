@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
   integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="{% static 'global/css/style.css' %}">
 {% endblock head %}
 
 {% block content %}
@@ -146,39 +145,7 @@
     </div>
     <div class="projects_storage">
       <ul>
-        {% comment %} This is a temporary solution, need a model "project" to make dynamic grid {% endcomment %}
-        <li id="backend">
-          <div class="container">
-            <img src="{% static 'global/img/projects/DEVChat.png' %}" alt="Description">
-            <p><strong>DEV Chat</strong><br>A forum with post system and login management. <br>Developed with <strong>Flask</strong>, <strong>SQLite</strong>, and <strong>Bootstrap</strong>.</p>
-            <span><a href="#">App</a></span>
-            <span><a href="https://github.com/rarorza/DEVChat" target="_blank" rel="noreferrer">GitHub</a></span>
-          </div>
-        </li>
-        <li id="backend">
-            <div class="container">
-              <img src="{% static 'global/img/projects/PWDVault.png' %}" alt="Description">
-              <p><strong>Password Vault</strong><br>Um gerenciador de senhas, com sistema de login. <br>Desenvolvido com <strong>Flask</strong>, <strong>SQLite</strong> e <strong>Bootstrap</strong>, utilizando padrão MVC.</p>
-              <span><a href="#" target="_blank" rel="noreferrer">App</a></span>
-              <span><a href="https://github.com/rarorza/password_vault" target="_blank" rel="noreferrer">GitHub</a></span>
-            </div>
-        </li>
-        <li id="backend">
-          <div class="container">
-            <img src="{% static 'global/img/projects/sample.png' %}" alt="Description">
-            <p><strong>My blog</strong><br>Is one of my personal projects, built with <strong>Django</strong>, <strong>PostgreSQL</strong>, and <strong>Docker</strong>."</p>
-            <span><a href="#">App</a></span>
-            <span><a href="#">GitHub</a></span>
-          </div>
-        </li>
-        <li id="backend">
-          <div class="container">
-            <img src="{% static 'global/img/projects/sample.png' %}" alt="Description">
-            <p>Coming Soon</p>
-            <span><a href="#">App</a></span>
-            <span><a href="#">GitHub</a></span>
-          </div>
-        </li>
+        {% include "portfolio/partials/project.html" %}
       </ul>
     </div>
   </section>

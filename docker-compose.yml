@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   djangoapp:
-    container_name: djangoapp
+    container_name: djangoapp_portfolio_blog
     build:
       context: .
     ports:
@@ -16,8 +16,10 @@ services:
     depends_on:
       - psql
   psql:
-    container_name: psql
+    container_name: psql_portfolio_blog
     image: postgres:13-alpine
+    ports:
+      - 5432:5432
     volumes:
       - ./data/postgres/data:/var/lib/postgresql/data/
     env_file:

@@ -1,0 +1,10 @@
+{% for project in projects %}
+  <li id="backend">
+    <div class="container">
+      <img src="{{ project.cover.url }}" alt="Description">
+      <p><strong>{{ project.name }}</strong><br>{{ project.description }}</p>
+      <span><a href="{{ project.deploy_link }}">App</a></span>
+      <span><a href="{{ projecto.repository_link }}" target="_blank" rel="noreferrer">GitHub</a></span>
+    </div>
+  </li>
+{% endfor %}
