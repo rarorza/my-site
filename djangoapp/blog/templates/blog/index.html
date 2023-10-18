@@ -1,3 +1,27 @@
-{% extends 'global/base.html' %}
-{% load static %}
-{% block title %}Blog{% endblock title %}
+{% extends 'global/blog/base.html' %}
+
+{% block content %}
+  <main class="main-content section-wrapper">
+    <div class="section-content-wide">
+      <div class="section-gap">
+
+        {% if page_objs %}
+          <div class="card-grid">
+            {% for post in page_objs %}
+              {% include 'blog/partials/_post-card.html' with i=forloop.counter0 %}
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="not-found center">
+            <h1>Nothing found :c</h1>
+            <p>
+              I didn't find anything in this link, please try another link
+              blog or go to <a href="{% url "blog:index-blog" %}">Home</a>
+            </p>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </main>
+{% endblock content %}

@@ -136,8 +136,7 @@ function gridProjects(){
     }
   }
 }
-
+menuMobile();
 gridProjects();
 typingTitle();
-menuMobile();
 aboutMe();

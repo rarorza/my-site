@@ -1,9 +1,10 @@
-{% extends 'global/base.html' %}
+{% extends 'global/portfolio/base.html' %}
 {% load static %}
 
 {% block title %}Portfolio{% endblock title %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'global/css/style_portfolio.css' %}">
 <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
   integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -11,6 +12,7 @@
 {% endblock head %}
 
 {% block content %}
+{% include 'global/portfolio/partials/_header.html' %}
 <section aria-label="Section, resume download and social links" class="selection-div" id="home">
     <div>
       <h2>Hello! I am</h2>
@@ -26,7 +28,7 @@
     <img src="{% static 'global/img/sample.png' %}" alt="Illustrative image of a man's face" />
   </section>
   <main>
-    {% include "global/partials/messages.html" %}
+    {% include "global/portfolio/partials/_messages.html" %}
     <article aria-label="About me section" class="about-me" id="about-me">
       <div class="about_me_title">
         <h2>About me</h2>
@@ -146,7 +148,7 @@
     </div> {% endcomment %}
     <div class="projects_storage">
       <ul>
-        {% include "portfolio/partials/project.html" %}
+        {% include "portfolio/partials/_project.html" %}
       </ul>
     </div>
   </section>
@@ -194,5 +196,6 @@
     </form>
 
   </section>
+  {% include 'global/portfolio/partials/_footer.html' %}
   <script src="{% static 'global/js/script.js' %}"></script>
 {% endblock content %}
