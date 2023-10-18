@@ -7,7 +7,7 @@ from utils.email_sender import send_email
 
 # Create your views here.
 def index(request):
-    projects = ProjectPortfolio.objects.all()
+    projects = ProjectPortfolio.objects.filter(is_published=True).all()
 
     if request.method == "POST":
         form = ContactForm(data=request.POST)
