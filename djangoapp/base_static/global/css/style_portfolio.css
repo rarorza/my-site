@@ -823,7 +823,7 @@ footer .footer_comercial {
 }
 
 .btn {
-  background-color: hsl(var(--clr-primary-dkr));
+  background-color: hsl(var(--clr-primary-dkst));
   color: var(--clr-white);
   text-align: center;
   font-weight: bold;

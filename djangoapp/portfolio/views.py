@@ -1,13 +1,26 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from portfolio.forms import ContactForm
-from portfolio.models import ProjectPortfolio
+from portfolio.models import Experience, ProjectPortfolio
 from utils.email_sender import send_email
 
 
 # Create your views here.
 def index(request):
-    projects = ProjectPortfolio.objects.filter(is_published=True).all()
+    projects = (
+        ProjectPortfolio.objects.filter(
+            is_published=True,
+        )
+        .all()
+        .order_by("-pk")
+    )
+    experiences = (
+        Experience.objects.filter(
+            is_published=True,
+        )
+        .all()
+        .order_by("-pk")
+    )
 
     if request.method == "POST":
         form = ContactForm(data=request.POST)
@@ -29,5 +42,5 @@ def index(request):
     else:
         form = ContactForm()
 
-    context = {"projects": projects, "form": form}
+    context = {"projects": projects, "experiences": experiences, "form": form}
     return render(request, "portfolio/index.html", context=context)

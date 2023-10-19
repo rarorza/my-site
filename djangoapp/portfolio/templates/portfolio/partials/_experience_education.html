@@ -1,0 +1,22 @@
+<div class="education_content">
+  {% for experience in experiences %}
+    {% if experience.is_education %}
+      <div>
+        {% if experience.is_current_experience %}
+          <span>{{ experience.start_time | date:'Y' }}-202X</span>
+          {% else %}
+          <span>{{ experience.start_time | date:'Y' }}-{{ experience.end_time | date:'Y' }}</span>
+        {% endif %}
+        <h3>{{ experience.title }}</h3>
+        <p>{{ experience.description }}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+  <ul>
+    {% for experience in experiences %}
+      {% if experience.is_education %}
+        <li><i class="fa-sharp fa-solid fa-circle"></i></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

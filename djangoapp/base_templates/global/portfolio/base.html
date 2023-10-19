@@ -2,9 +2,8 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %} | rarorza</title>
+    <title>{% block title %}{% endblock title %} | {{ site_setup.title }}</title>
+    {% include "global/portfolio/partials/_head.html" %}
     {% block head %}{% endblock head %}
 </head>
 

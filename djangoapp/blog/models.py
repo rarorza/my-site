@@ -59,7 +59,7 @@ class Page(models.Model):
     )
     is_published = models.BooleanField(
         default=False,
-        help_text="Este campo precisará estar marcado para a página ser exibida",  # noqa 501
+        help_text="This field will need to be checked for the page to be displayed",  # noqa 501
     )
     content = models.TextField()
 
@@ -95,14 +95,14 @@ class Post(models.Model):
     )
     is_published = models.BooleanField(
         default=False,
-        help_text="Este campo precisará estar marcado para o post ser exibido",
+        help_text="This field will need to be checked for the post to be displayed",
     )
     excerpt = models.CharField(max_length=150)
     content = models.TextField()
     cover = models.ImageField(upload_to="posts/%Y/%m", blank=True, default="")
     cover_in_post_content = models.BooleanField(
         default=True,
-        help_text="Se marcado, exibirá a capa dentro do conteúdo do post",
+        help_text="If checked, will display the cover within the post content",
     )
 
     created_at = models.DateTimeField(auto_now_add=True)

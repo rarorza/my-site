@@ -73,6 +73,27 @@ class ProjectPortfolio(models.Model):
         return self.name
 
 
+class Experience(models.Model):
+    class Meta:
+        verbose_name = "Experience"
+        verbose_name_plural = "Experiences"
+
+    start_time = models.DateField(null=True, blank=True)
+    end_time = models.DateField(null=True, blank=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    is_published = models.BooleanField(default=False)
+    is_education = models.BooleanField(default=False)
+    is_current_experience = models.BooleanField(
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self) -> str:
+        return self.title
+
+
 class Contact(models.Model):
     class Meta:
         verbose_name = "Contact"

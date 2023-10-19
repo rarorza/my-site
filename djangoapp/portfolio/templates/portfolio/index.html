@@ -3,14 +3,6 @@
 
 {% block title %}Portfolio{% endblock title %}
 
-{% block head %}
-<link rel="stylesheet" href="{% static 'global/css/style_portfolio.css' %}">
-<link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-  integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
-{% endblock head %}
-
 {% block content %}
 {% include 'global/portfolio/partials/_header.html' %}
 <section aria-label="Section, resume download and social links" class="selection-div" id="home">
@@ -18,8 +10,10 @@
       <h2>Hello! I am</h2>
       <h2 class="typing">Back End Developer</h2>
       <div class="links">
-        <a href="#" download="Rafael_Rosa"><i
+        {% if site_setup.cv %}
+        <a href="{{ site_setup.cv.url }}" download="Rafael_Rosa"><i
             class="fa-solid fa-file-arrow-down"></i>CV</a>
+        {% endif %}
         <a href="https://br.linkedin.com/in/rarorza" target="_blank" rel="noreferrer"><i
             class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
         <a href="https://github.com/rarorza" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
@@ -37,7 +31,11 @@
           <span></span>
         </div>
       </div>
-      <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person" />
+      {% if site_setup.profile_pic %}
+      <img src="{{ site_setup.profile_pic.url }}" alt="Image of an illustrative person" />
+      {% else %}
+        <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person" />
+      {% endif %}
       <div class="about_me_content">
         <div class="about_me_text">
           <h1>I am Rafael</h1>
@@ -57,7 +55,7 @@
           </p>
           <p>
             <i class="fa-sharp fa-solid fa-laptop-code"></i>Code:
-            Python, Java
+            Python [Django, Flask and Selenium], JavaScript
           </p>
           <p>
             <i class="fa-solid fa-location-dot"></i>From: São Paulo, Brazil
@@ -82,51 +80,9 @@
     </div>
     <div class="resume_general">
       <h2 class="experience"></i>CAREER</h2>
-      <div class="experience_content">
-        <div>
-          <span>2023-202X</span>
-          <h3>Back-End Developer Freelancer</h3>
-          <p>I currently work as a freelancer, creating Python-based automations and APIs</p>
-        </div>
-        <div>
-          <span>2019-2021</span>
-          <h3>Customer Experience - Mercado Livre</h3>
-          <p>My most recent formal experience, where I had the opportunity to conduct training sessions, analyze metrics, and mediate conflicts.</p>
-        </div>
-        <div>
-          <span>2017-2018</span>
-          <h3>Support Rescue - NSX</h3>
-          <p>My first opportunity in the IT market, working with JIRA and MySQL databases.</p>
-        </div>
-        <ul>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-        </ul>
-      </div>
+      {% include "portfolio/partials/_experience_job.html" %}
       <h2 class="education"></i>EDUCATION</h2>
-      <div class="education_content">
-        <div>
-          <span>2022 - 2024</span>
-          <h3>Systems Analysis and Development</h3>
-          <p>I returned to the programming world, aiming to enhance my knowledge with the goal of becoming a back-end developer.</p>
-        </div>
-        <div>
-          <span>2017 - 2022</span>
-          <h3>Degree in Law</h3>
-          <p>I had the opportunity to pursue a degree in Law through a scholarship, so I took a break from my IT career.</p>
-        </div>
-        <div>
-          <span>2014 - 2016</span>
-          <h3>Technical Maintenance and Support in IT</h3>
-          <p>I started programming here, working on academic projects using VB and C languages with Arduino.</p>
-        </div>
-        <ul>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-          <li><i class="fa-sharp fa-solid fa-circle"></i></li>
-        </ul>
-      </div>
+      {% include "portfolio/partials/_experience_education.html" %}
     </div>
   </div>
   <section class="projects" id="projects">
