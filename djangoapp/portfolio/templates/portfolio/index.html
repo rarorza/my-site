@@ -11,7 +11,7 @@
       <h2 class="typing">Back End Developer</h2>
       <div class="links">
         {% if site_setup.cv %}
-        <a href="{{ site_setup.cv.url }}" download="Rafael_Rosa"><i
+        <a href="{{ site_setup.cv.url }}" download="Rafael_Rosa_CV"><i
             class="fa-solid fa-file-arrow-down"></i>CV</a>
         {% endif %}
         <a href="https://br.linkedin.com/in/rarorza" target="_blank" rel="noreferrer"><i
@@ -32,7 +32,7 @@
         </div>
       </div>
       {% if site_setup.profile_pic %}
-      <img src="{{ site_setup.profile_pic.url }}" alt="Image of an illustrative person" />
+        <img src="{{ site_setup.profile_pic.url }}" alt="Image of an illustrative person" />
       {% else %}
         <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person" />
       {% endif %}
