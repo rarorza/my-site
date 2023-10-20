@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", "change-me")
 DEBUG = bool(int(os.getenv("DEBUG", 0)))
 
 ALLOWED_HOSTS = [
-    "34.171.196.24",
+    host.strip() for host in os.getenv("ALLOWED_HOST", "").split(",") if host.strip()
 ]
 
 
