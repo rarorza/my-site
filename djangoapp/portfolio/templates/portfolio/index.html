@@ -21,7 +21,7 @@
     </div>
     <img src="{% static 'global/img/sample.png' %}" alt="Illustrative image of a man's face" />
   </section>
-  <main>
+  <section>
     {% include "global/portfolio/partials/_messages.html" %}
     <article aria-label="About me section" class="about-me" id="about-me">
       <div class="about_me_title">
@@ -32,9 +32,9 @@
         </div>
       </div>
       {% if site_setup.profile_pic %}
-        <img src="{{ site_setup.profile_pic.url }}" alt="Image of an illustrative person" />
+        <img src="{{ site_setup.profile_pic.url }}" alt="Image of an illustrative person">
       {% else %}
-        <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person" />
+        <img src="{% static 'global/img/self.png' %}" alt="Image of an illustrative person">
       {% endif %}
       <div class="about_me_content">
         <div class="about_me_text">
@@ -51,9 +51,6 @@
         </div>
         <div class="sobre_info">
           <p>
-            <i class="fa-solid fa-calendar-days"></i>Birth: 20 nov 1998
-          </p>
-          <p>
             <i class="fa-sharp fa-solid fa-laptop-code"></i>Code:
             Python [Django, Flask and Selenium], JavaScript
           </p>
@@ -68,7 +65,7 @@
         </div>
       </div>
     </article>
-  </main>
+  </section>
   <!-- Resume -->
   <div class="my_resume" id="resume">
     <div class="about_me_title">
@@ -93,15 +90,6 @@
         <span></span>
       </div>
     </div>
-    {% comment %} <div class="projects_models">
-      <ul aria-label="Navigation between project-specific templates">
-        <li class="all">All</li>
-        <li class="backend">Back End</li>
-        <li class="data">Data Science</li>
-        <li class="ia">IA</li>
-        <li class="ia">Games</li>
-      </ul>
-    </div> {% endcomment %}
     <div class="projects_storage">
       <ul>
         {% include "portfolio/partials/_project.html" %}
@@ -118,7 +106,7 @@
       </div>
     </div>
     
-    <form method="POST" action="">
+    <form method="POST" action="{% url "portfolio:index-portfolio" %}">
       {% csrf_token %}
       <div class="form-content">
         {% for field in form %}
