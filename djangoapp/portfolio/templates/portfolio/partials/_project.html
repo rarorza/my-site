@@ -1,5 +1,5 @@
 {% for project in projects %}
-  <li id="backend">
+  <li class="{{ project.category.name }}">
     <div class="container">
       <img src="{{ project.cover.url }}" alt="Description">
       <p><strong>{{ project.name }}</strong><br>{{ project.description }}</p>
