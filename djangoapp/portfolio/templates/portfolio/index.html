@@ -5,7 +5,7 @@
 
 {% block content %}
 {% include 'global/portfolio/partials/_header.html' %}
-<section aria-label="Section, resume download and social links" class="selection-div" id="home">
+  <section aria-label="Section, resume download and social links" class="selection-div" id="home">
     <div>
       <h2>Hello! I am</h2>
       <h2 class="typing">Back End Developer</h2>
@@ -41,48 +41,50 @@
           <h1>I am Rafael</h1>
           <p>
             I have a degree in Law and I'm currently studying Software Analysis and Development. My expertise lies in back-end development, although I also have some knowledge of front-end.
-            <br />
-            <br />
+            <br>
+            <br>
             I have experience in support, and I currently work as a freelance on some projects.
-            <br />
-            <br />
+            <br>
+            <br>
             I recently started a blog to discuss various topics (technology, games, movies, etc.) and practice my English. Feel free to engage and send me an email :)
           </p>
         </div>
         <div class="sobre_info">
           <p>
-            <i class="fa-sharp fa-solid fa-laptop-code"></i>Code:
-            Python [Django, Flask and Selenium], JavaScript
+            <i class="fa-sharp fa-solid fa-laptop-code"></i>
+            Code: Python [Django, Flask and Selenium], JavaScript
           </p>
           <p>
-            <i class="fa-solid fa-location-dot"></i>From: São Paulo, Brazil
+            <i class="fa-solid fa-location-dot"></i>
+            From: São Paulo, Brazil
           </p>
           <p>
-            <i class="fa-sharp fa-solid fa-globe"></i>Languages:
-            Portuguese and English
+            <i class="fa-sharp fa-solid fa-globe"></i>
+            Languages: Portuguese and English
           </p>
-          <p><i class="fa-solid fa-envelope"></i>Email: rarorza@proton.me</p>
+          <p><i class="fa-solid fa-envelope"></i>
+            Email: rarorza@proton.me
+          </p>
         </div>
       </div>
     </article>
   </section>
-  <!-- Resume -->
-  <div class="my_resume" id="resume">
-    <div class="about_me_title">
-      <h2>Resume</h2>
-      <p>A brief summary of my professional and academic experiences</p>
-      <div aria-label="Buttons illustrations section">
-        <span></span>
+  <section class="projects" id="projects">
+    <div class="my_resume" id="resume">
+      <div class="about_me_title">
+        <h2>Resume</h2>
+        <p>A brief summary of my professional and academic experiences</p>
+        <div aria-label="Buttons illustrations section">
+          <span></span>
+        </div>
+      </div>
+      <div class="resume_general">
+        <h2 class="experience"></i>CAREER</h2>
+        {% include "portfolio/partials/_experience_job.html" %}
+        <h2 class="education"></i>EDUCATION</h2>
+        {% include "portfolio/partials/_experience_education.html" %}
       </div>
     </div>
-    <div class="resume_general">
-      <h2 class="experience"></i>CAREER</h2>
-      {% include "portfolio/partials/_experience_job.html" %}
-      <h2 class="education"></i>EDUCATION</h2>
-      {% include "portfolio/partials/_experience_education.html" %}
-    </div>
-  </div>
-  <section class="projects" id="projects">
     <div class="about_me_title">
       <h2>Projects</h2>
       <p>My projects</p>
@@ -96,7 +98,7 @@
       </ul>
     </div>
   </section>
-  
+    
   <section class="contact" id="contact-me">
     <div class="about_me_title">
       <h2>Contact</h2>
