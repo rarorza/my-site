@@ -1,0 +1,4 @@
+# Test libs
+pytest>=7.4.1,<7.5
+pytest-django>=4.7.0<4.8
+pytest-watch>=4.2.0<4.3
