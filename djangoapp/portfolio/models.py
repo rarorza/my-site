@@ -102,3 +102,22 @@ class Contact(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     content = models.TextField()
+
+class SectionContent(models.Model):
+    content = models.TextField()
+
+    def __str__(self) -> str:
+        return self.content
+
+class Section(models.Model):
+    class Meta:
+        verbose_name = "Section"
+        verbose_name_plural = "Sections"
+
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    contents = models.ManyToManyField(SectionContent, default=None, blank=True)
+
+    def __str__(self) -> str:
+        return self.title
+    

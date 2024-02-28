@@ -1,5 +1,5 @@
 from django.contrib import admin
-from portfolio.models import Category, Experience, ProjectPortfolio
+from portfolio.models import Category, Experience, ProjectPortfolio, Section, SectionContent
 
 
 # Register your models here.
@@ -23,3 +23,13 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "is_published", "is_education")
     list_display_links = ("title",)
     list_editable = ("is_published", "is_education")
+
+@admin.register(Section)
+class SectionAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "description")
+    list_display_links = ("title",)
+
+@admin.register(SectionContent)
+class SectionAdmin(admin.ModelAdmin):
+    list_display = ("id", "content")
+    list_display_links = ("content",)

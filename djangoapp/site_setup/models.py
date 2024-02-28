@@ -3,7 +3,6 @@ from utils.models_validators import validate_pdf, validate_png
 from utils.resize_image import resize_image
 
 
-# Create your models here.
 class MenuLink(models.Model):
     class Meta:
         verbose_name = "Menu Link"
