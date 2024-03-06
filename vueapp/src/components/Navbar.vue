@@ -1,0 +1,15 @@
+<template>
+  <header>
+    <h1>Rafael <span>Rosa</span></h1>
+    <nav>
+      <ul aria-label="Prymary navigation" class="primary-navigation">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-me">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact-me">Contact</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <i class="fa-solid fa-bars"></i>
+    </nav>
+  </header>
+</template>

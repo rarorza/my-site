@@ -6,14 +6,14 @@ class ProjectPortfolioSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectPortfolio
         fields = (
-            "name", "description", "repository_link", "deploy_link", "category", "is_published",
+            "id", "name", "description", "repository_link", "deploy_link", "category", "is_published",
         )
 
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Experience
         fields = (
-            "start_time", "end_time", "title", "description", "is_published", "is_education", "is_current_experience",
+            "id", "start_time", "end_time", "title", "description", "is_published", "is_education", "is_current_experience",
         )
 
 class SectionContentSerializer(serializers.ModelSerializer):
@@ -26,5 +26,5 @@ class SectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Section
         fields = (
-            "title", "description", "contents"
+            "id", "title", "description", "contents"
         )

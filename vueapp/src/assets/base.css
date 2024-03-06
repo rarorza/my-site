@@ -1,86 +1,57 @@
-/* color palette from <https://github.com/vuejs/theme> */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Colors */
+  --_clr-base-hue: 213;
+  --_clr-primary: var(--_clr-base-hue) 100%;
+  --_clr-gray: var(--_clr-base-hue) 10%;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --clr-whitest: var(--_clr-primary) 100%;
+  --clr-white: var(--_clr-primary) 99%;
+  --clr-black: var(--_clr-primary) 2%;
 
-  --vt-c-indigo: #2c3e50;
+  --clr-primary-ltst: var(--_clr-primary) 80%;
+  --clr-primary-ltr: var(--_clr-primary) 70%;
+  --clr-primary-lt: var(--_clr-primary) 60%;
+  --clr-primary-base: var(--_clr-primary) 50%;
+  --clr-primary-dk: var(--_clr-primary) 40%;
+  --clr-primary-dkr: var(--_clr-primary) 30%;
+  --clr-primary-dkst: var(--_clr-primary) 20%;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --clr-gray-ltst: var(--_clr-gray) 90%;
+  --clr-gray-ltr: var(--_clr-gray) 80%;
+  --clr-gray-lt: var(--_clr-gray) 70%;
+  --clr-gray-base: var(--_clr-gray) 50%;
+  --clr-gray-dk: var(--_clr-gray) 30%;
+  --clr-gray-dkr: var(--_clr-gray) 20%;
+  --clr-gray-dkst: var(--_clr-gray) 10%;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --clr-white: rgb(245, 245, 255);
+  --clr-white-main: #f8fafc;
+  --clr-blue-card: #cbd5e1;
+
+  --spacing: 1.5rem;
+  --smaller-font-size: 1.4rem;
+  --default-border-radius: 4px;
+  --transition-fast: 300ms;
 }
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+  padding: 0;
   margin: 0;
-  font-weight: normal;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(var(--clr-white));
+  max-width: 1200px;
+  margin: 0 auto;
 }
