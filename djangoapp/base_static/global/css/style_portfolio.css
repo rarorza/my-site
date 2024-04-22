@@ -165,7 +165,7 @@ div .links {
 .selection-div a {
   display: flex;
   max-width: 120px;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .selection-div a i {
@@ -854,7 +854,7 @@ footer .footer_comercial {
   .selection-div a {
     display: flex;
     max-width: 120px;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .selection-div a i {
