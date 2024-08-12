@@ -19,7 +19,9 @@ from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR.parent / "data" / "web"
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale'),]
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
+]
 
 # DOTENV servidor
 load_dotenv(BASE_DIR.parent / "dotenv_files" / ".env", override=True)
@@ -135,12 +137,12 @@ USE_I18N = True
 USE_TZ = True
 
 LANGUAGES = (
-    ('pt-br', _('Portuguese')),
-    ('en', _('English')),
+    ("pt-br", _("Portuguese")),
+    ("en", _("English")),
 )
 
 LOCALE_PATH = [
-    BASE_DIR / 'locale',
+    BASE_DIR / "locale",
 ]
 
 # Static files (CSS, JavaScript, Images)
@@ -211,3 +213,65 @@ AXES_ENABLED = True
 AXES_FAILURE_LIMIT = 3
 AXES_COOLOFF_TIME = 1
 AXES_RESET_ON_SUCCESS = True
+
+FORMATTERS = (
+    {
+        "verbose": {
+            "format": "{levelname} {asctime:s} {threadName} {thread:d} {module} {filename} {lineno:d} {name} {funcName} {process:d} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {asctime:s} {module} {filename} {lineno:d} {funcName} {message}",
+            "style": "{",
+        },
+    },
+)
+
+
+HANDLERS = {
+    "console_handler": {
+        "class": "logging.StreamHandler",
+        "formatter": "simple",
+    },
+    "my_handler": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "filename": f"{BASE_DIR}/logs/blogthedata.log",
+        "mode": "a",
+        "encoding": "utf-8",
+        "formatter": "simple",
+        "backupCount": 5,
+        "maxBytes": 1024 * 1024 * 5,  # 5 MB
+    },
+    "my_handler_detailed": {
+        "class": "logging.handlers.RotatingFileHandler",
+        "filename": f"{BASE_DIR}/logs/blogthedata_detailed.log",
+        "mode": "a",
+        "formatter": "verbose",
+        "backupCount": 5,
+        "maxBytes": 1024 * 1024 * 5,  # 5 MB
+    },
+}
+
+LOGGERS = (
+    {
+        "django": {
+            "handlers": ["console_handler", "my_handler_detailed"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django.request": {
+            "handlers": ["my_handler"],
+            "level": "WARNING",
+            "propagate": False,
+        },
+    },
+)
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": FORMATTERS[0],
+    "handlers": HANDLERS,
+    "loggers": LOGGERS[0],
+}
