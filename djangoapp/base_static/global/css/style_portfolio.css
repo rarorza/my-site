@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 :root {
   /* Colors */
@@ -36,7 +36,6 @@
   --default-border-radius: 4px;
   --transition-fast: 300ms;
 }
-
 
 * {
   padding: 0;
@@ -97,7 +96,7 @@ header .primary-navigation li a {
 }
 
 header .primary-navigation li a::after {
-  content: "";
+  content: '';
   width: 0px;
   height: 0px;
   display: block;
@@ -114,6 +113,46 @@ header .primary-navigation li a:hover::after {
 
 header .fa-bars {
   display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.language-container {
+  display: flex;
+  margin: 0 28px 0 28px;
+  align-items: center;
+}
+
+.language-container a {
+  margin-right: 5px;
+}
+
+.language-container a img {
+  width: 24px;
+}
+
+.darken {
+  display: inline-block;
+  background: hsl(var(--clr-primary-dkst));
+  padding: 0;
+  /* border-radius: 50%; */
+}
+
+.darken:hover img {
+  opacity: 0.5;
+}
+
+.darken img {
+  display: block;
+
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 /* DOWNLOAD CV SECTION */
@@ -136,13 +175,13 @@ header .fa-bars {
 }
 
 .selection-div div h2 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: 600;
   color: hsl(var(--clr-gray-dkst));
 }
 
 .selection-div div p {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: 300;
   color: hsl(var(--clr-gray-dkst));
 }
@@ -177,7 +216,7 @@ div .links {
 }
 
 .typing::after {
-  content: "|";
+  content: '|';
   margin-left: 5px;
   opacity: 1;
   animation: blink 0.7s infinite;
@@ -211,7 +250,7 @@ main .about-me {
   font-size: 2.5rem;
   color: hsl(var(--clr-primary-dkst));
   margin-bottom: 15px;
-  font-family: "Berkshire Swash", cursive;
+  font-family: 'Berkshire Swash', cursive;
 }
 
 .about_me_title p {
@@ -268,7 +307,7 @@ main .about-me {
   height: 6px;
   width: 60px;
   margin: 20px 0;
-  content: "";
+  content: '';
   display: block;
   border-radius: 5px;
 }
@@ -342,7 +381,7 @@ main .about-me {
 
 .my_services ul li h3 {
   color: black;
-  font-family: "poppins";
+  font-family: 'poppins';
   font-weight: 500;
 }
 
@@ -352,7 +391,7 @@ main .about-me {
 }
 
 .my_services li::before {
-  content: "";
+  content: '';
   transition: 0.5s ease-in-out;
   border-radius: 6px;
   width: 0px;
@@ -365,7 +404,7 @@ main .about-me {
 }
 
 .my_services li::after {
-  content: "";
+  content: '';
   transition: 0.5s ease-in-out;
   border-radius: 6px;
   width: 0px;
@@ -406,7 +445,7 @@ main .about-me {
 }
 
 .resume_general h2 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: 1.5rem;
   background-color: hsl(var(--clr-primary-dkst));
   color: #f1f5f9;
@@ -453,7 +492,7 @@ main .about-me {
 }
 
 .resume_general .experience_content div::before {
-  content: "";
+  content: '';
   border-right: 30px solid transparent;
   border-bottom: 30px solid var(--clr-blue-card);
   position: absolute;
@@ -464,12 +503,12 @@ main .about-me {
 
 .resume_general .experience_content div span {
   color: hsl(var(--clr-primary-dkst));
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: bold;
 }
 
 .resume_general .experience_content div h3 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   margin: 10px 0;
 }
 
@@ -502,7 +541,7 @@ main .about-me {
 }
 
 .resume_general .education_content div::before {
-  content: "";
+  content: '';
   border-right: 30px solid transparent;
   border-bottom: 30px solid var(--clr-blue-card);
   position: absolute;
@@ -513,12 +552,12 @@ main .about-me {
 
 .resume_general .education_content div span {
   color: hsl(var(--clr-primary-dkst));
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-weight: bold;
 }
 
 .resume_general .education_content div h3 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   margin: 10px 0;
 }
 
@@ -552,7 +591,7 @@ main .about-me {
 
 .projects_models ul li {
   cursor: pointer;
-  font-size: "Poppins";
+  font-size: 'Poppins';
   background-color: hsl(var(--clr-primary-dkst));
   border: 1px solid hsl(var(--clr-white));
   padding: 6px 20px;
@@ -601,13 +640,13 @@ main .about-me {
   border: solid 1px var(--clr-blue-card);
   border-radius: 5px;
   padding: 2px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   cursor: pointer;
 }
 
 .projects_storage ul p {
   padding: 10px 0;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 
 .projects a {
@@ -642,6 +681,7 @@ footer {
   align-items: center;
   position: relative;
   color: hsl(var(--clr-gray-dkst));
+  margin: 0 auto;
 }
 
 .footer_sociais li {
@@ -663,7 +703,7 @@ footer {
 }
 
 .footer_sociais::before {
-  content: "";
+  content: '';
   height: 5px;
   position: absolute;
   width: 200px;
@@ -676,7 +716,7 @@ footer .footer_comercial {
   color: hsl(var(--clr-gray-base));
   margin: 90px auto;
   font-size: 1.1rem;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 
 /* RESPONSIVE */
@@ -727,6 +767,10 @@ footer .footer_comercial {
   header i {
     color: hsl(var(--clr-gray-dkst));
     font-size: 2rem;
+  }
+
+  .language-container a {
+    margin-right: 20px;
   }
 
   /* Menu hamburger */
@@ -780,7 +824,6 @@ footer .footer_comercial {
 .message.warning {
   background: rgba(255, 255, 0, 0.3);
   border: 1px solid rgba(255, 255, 0, 90%);
-
 }
 .message.info {
   background: rgba(0, 0, 255, 0.3);

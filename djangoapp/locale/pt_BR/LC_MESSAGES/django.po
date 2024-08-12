@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-12 10:34-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: base_templates/global/portfolio/partials/_footer.html:5
+msgid "Social Networks"
+msgstr "Redes Sociais"
+
+#: base_templates/global/portfolio/partials/_footer.html:14
+msgid "All rights reserved"
+msgstr "Todos os direitos reservados"
+
+#: base_templates/global/portfolio/partials/_header.html:9
+msgid "Home"
+msgstr "Início"
+
+#: base_templates/global/portfolio/partials/_header.html:10
+msgid "About"
+msgstr "Sobre"
+
+#: base_templates/global/portfolio/partials/_header.html:11
+#: portfolio/templates/portfolio/index.html:86
+msgid "Projects"
+msgstr "Projetos"
+
+#: base_templates/global/portfolio/partials/_header.html:12
+#: portfolio/templates/portfolio/index.html:101
+msgid "Contact"
+msgstr "Contato"
+
+#: portfolio/forms.py:7
+msgid "Your name"
+msgstr "Nome"
+
+#: portfolio/forms.py:8
+msgid "Your email"
+msgstr "E-mail"
+
+#: portfolio/forms.py:10
+msgid "Your message"
+msgstr "Mensagem"
+
+#: portfolio/templates/portfolio/index.html:11
+msgid "Hello! I am"
+msgstr "Olá! Eu sou"
+
+#: portfolio/templates/portfolio/index.html:12
+msgid "Full Stack Developer"
+msgstr "Desenvolvedor Full Stack"
+
+#: portfolio/templates/portfolio/index.html:29
+msgid "About me"
+msgstr "Sobre mim"
+
+#: portfolio/templates/portfolio/index.html:30
+msgid "Professional profile"
+msgstr "Perfil Profissional"
+
+#: portfolio/templates/portfolio/index.html:42
+msgid "I am Rafael"
+msgstr "Me chamo Rafael"
+
+#: portfolio/templates/portfolio/index.html:60
+msgid "Code"
+msgstr "Tecnologias"
+
+#: portfolio/templates/portfolio/index.html:72
+msgid "Resume"
+msgstr "Resumo"
+
+#: portfolio/templates/portfolio/index.html:73
+msgid "A brief summary of my professional and academic experiences"
+msgstr "Um breve resumo das minhas experiências profissionais e acadêmicas"
+
+#: portfolio/templates/portfolio/index.html:79
+msgid "CAREER"
+msgstr "CARREIRA"
+
+#: portfolio/templates/portfolio/index.html:81
+msgid "EDUCATION"
+msgstr "EDUCAÇÃO"
+
+#: portfolio/templates/portfolio/index.html:87
+msgid "My projects"
+msgstr "Meus projetos"
+
+#: portfolio/templates/portfolio/index.html:102
+msgid "Send me an email"
+msgstr "Entre em contato"
+
+#: portfolio/templates/portfolio/index.html:138
+msgid "Send"
+msgstr "Enviar"
+
+#: portfolio/views.py:61
+msgid "Email successfully sent!"
+msgstr "E-mail enviado com sucesso!"
+
+#: portfolio/views.py:66
+msgid "Unable to send, please contact me via email: rarorza@proton.me"
+msgstr "Mensagem não enviada, entre em contato por e-mail: rarorza@proton.me"
+
+#: project/settings.py:138
+msgid "Portuguese"
+msgstr "Português"
+
+#: project/settings.py:139
+msgid "English"
+msgstr "Inglês"

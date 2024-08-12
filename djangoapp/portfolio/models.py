@@ -9,6 +9,7 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
     name = models.CharField(max_length=255)
+    name_pt = models.CharField(max_length=255)
     slug = models.SlugField(
         unique=True, default=None, null=True, blank=True, max_length=255
     )
@@ -28,6 +29,7 @@ class ProjectPortfolio(models.Model):
         verbose_name_plural = "ProjectsPortfolio"
 
     name = models.CharField(max_length=255)
+    name_pt = models.CharField(max_length=255)
     slug = models.SlugField(
         unique=True,
         default=None,
@@ -36,6 +38,7 @@ class ProjectPortfolio(models.Model):
         max_length=255,
     )
     description = models.TextField()
+    description_pt = models.TextField()
     cover = models.ImageField(
         upload_to="projects/%Y/%m",
         blank=True,
@@ -81,7 +84,9 @@ class Experience(models.Model):
     start_time = models.DateField(null=True, blank=True)
     end_time = models.DateField(null=True, blank=True)
     title = models.CharField(max_length=255)
+    title_pt = models.CharField(max_length=255)
     description = models.TextField()
+    description_pt = models.TextField()
     is_published = models.BooleanField(default=False)
     is_education = models.BooleanField(default=False)
     is_current_experience = models.BooleanField(

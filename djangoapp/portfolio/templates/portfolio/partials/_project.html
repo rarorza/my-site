@@ -1,8 +1,12 @@
 {% for project in projects %}
-  <li class="{{ project.category.name }}">
-    <div class="container">
-      <img src="{{ project.cover.url }}" alt="Description">
-      <p><strong>{{ project.name }}</strong><br>{{ project.description }}</p>
+<li class="{{ project.category.name }}">
+  <div class="container">
+    <img src="{{ project.cover.url }}" alt="Description">
+    {% for pro in projects_translate %}
+      {% if pro.id == project.id %}
+        <p><strong>{{ pro.t_name }}</strong><br>{{ pro.t_description }}</p>
+      {% endif %}
+    {% endfor %}
       {% if project.deploy_link %}
         <span><a href="{{ project.deploy_link }}">App</a></span>
       {% endif %}

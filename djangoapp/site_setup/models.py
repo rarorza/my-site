@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from utils.models_validators import validate_pdf, validate_png
 from utils.resize_image import resize_image
@@ -37,6 +38,10 @@ class SiteSetup(models.Model):
     show_description = models.BooleanField(default=True)
     show_pagination = models.BooleanField(default=True)
     show_footer = models.BooleanField(default=True)
+    about_me = models.TextField(blank=True)
+    about_me_pt = models.TextField(blank=True)
+    code_languages = models.TextField(blank=True)
+    email = models.CharField(max_length=255, blank=True)
 
     favicon = models.ImageField(
         upload_to="assets/favicon/%Y/%m/",

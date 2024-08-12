@@ -1,13 +1,21 @@
+{% load i18n %} 
+{% load static %}
 <header>
-  <h1>Rafael <span>Rosa</span></h1>
+  <a href="{% url "portfolio:index-portfolio" %}">
+    <h1>Rafael <span>Rosa</span></h1>
+  </a>
   <nav>
     <ul aria-label="Prymary navigation" class="primary-navigation">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about-me">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact-me">Contact</a></li>
+      <li><a href="#home">{% trans 'Home' %}</a></li>
+      <li><a href="#about-me">{% trans 'About' %}</a></li>
+      <li><a href="#projects">{% trans 'Projects' %}</a></li>
+      <li><a href="#contact-me">{% trans 'Contact' %}</a></li>
       <li><a href="{% url 'blog:index-blog' %}">Blog</a></li>
     </ul>
+    <div class="language-container">
+      <a class="darken" href="{% url 'set-language' 'pt-br' %}"><img src="{% static 'global/img/brazil-flag.png' %}" alt="BR flag from freepik"></a>
+      <a class="darken" href="{% url 'set-language' 'en' %}"><img src="{% static 'global/img/usa-flag.png' %}" alt="EN flag from freepik"></a> 
+    </div> 
     <i class="fa-solid fa-bars"></i>
   </nav>
 </header>

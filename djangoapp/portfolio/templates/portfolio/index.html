@@ -1,4 +1,5 @@
 {% extends 'global/portfolio/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}Portfolio{% endblock title %}
@@ -7,8 +8,8 @@
 {% include 'global/portfolio/partials/_header.html' %}
   <section aria-label="Section, resume download and social links" class="selection-div" id="home">
     <div>
-      <h2>Hello! I am</h2>
-      <h2 class="typing">Full Stack Developer</h2>
+      <h2>{% trans 'Hello! I am' %}</h2>
+      <h2 class="typing">{% trans 'Full Stack Developer' %}</h2>
       <div class="links">
         {% if site_setup.cv %}
         <a href="{{ site_setup.cv.url }}" download="Rafael_Rosa_CV"><i
@@ -25,8 +26,8 @@
     {% include "global/portfolio/partials/_messages.html" %}
     <article aria-label="About me section" class="about-me" id="about-me">
       <div class="about_me_title">
-        <h2>About me</h2>
-        <p>Professional profile</p>
+        <h2{% trans 'About me' %}></h2>
+        <p>{% trans 'Professional profile' %}</p>
         <div aria-label="Buttons illustrations section">
           <span></span>
         </div>
@@ -38,32 +39,28 @@
       {% endif %}
       <div class="about_me_content">
         <div class="about_me_text">
-          <h1>I am Rafael</h1>
+          <h1>{% trans 'I am Rafael' %}</h1>
           <p>
-            I have a degree in Law and I'm currently studying Software Analysis and Development. My expertise lies in back end development, although I also have some knowledge of front end.
-            <br>
-            <br>
-            I have experience in support, and I currently work as a freelance on some projects.
-            <br>
-            <br>
-            I recently started a blog to discuss various topics (technology, games, movies, etc.) and practice my English. Feel free to engage and send me an email :)
+            {% if html_language == "pt-br" %}
+              {% for phrase in about_me_pt %}
+                {{phrase}}
+                <br><br>
+              {% endfor %}
+            {% else %}
+              {% for phrase in about_me %}
+                {{phrase}}
+                <br><br>
+              {% endfor %}
+            {% endif %}
           </p>
         </div>
         <div class="sobre_info">
           <p>
             <i class="fa-sharp fa-solid fa-laptop-code"></i>
-            Code: Python [Django, Flask and Selenium], JavaScript [Vue.JS]
-          </p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
-            From: São Paulo, Brazil
-          </p>
-          <p>
-            <i class="fa-sharp fa-solid fa-globe"></i>
-            Languages: Portuguese and English
+            {% trans 'Code' %}: {{ site_setup.code_languages }}
           </p>
           <p><i class="fa-solid fa-envelope"></i>
-            Email: rarorza@proton.me
+            E-mail: {{ site_setup.email }}
           </p>
         </div>
       </div>
@@ -72,22 +69,22 @@
   <section class="projects" id="projects">
     <div class="my_resume" id="resume">
       <div class="about_me_title">
-        <h2>Resume</h2>
-        <p>A brief summary of my professional and academic experiences</p>
+        <h2>{% trans 'Resume' %}</h2>
+        <p>{% trans 'A brief summary of my professional and academic experiences'%}</p>
         <div aria-label="Buttons illustrations section">
           <span></span>
         </div>
       </div>
       <div class="resume_general">
-        <h2 class="experience"></i>CAREER</h2>
+        <h2 class="experience"></i>{% trans 'CAREER' %}</h2>
         {% include "portfolio/partials/_experience_job.html" %}
-        <h2 class="education"></i>EDUCATION</h2>
+        <h2 class="education"></i>{% trans 'EDUCATION' %}</h2>
         {% include "portfolio/partials/_experience_education.html" %}
       </div>
     </div>
     <div class="about_me_title">
-      <h2>Projects</h2>
-      <p>My projects</p>
+      <h2>{% trans 'Projects' %}</h2>
+      <p>{% trans 'My projects' %}</p>
       <div aria-label="Project grid section">
         <span></span>
       </div>
@@ -101,8 +98,8 @@
     
   <section class="contact" id="contact-me">
     <div class="about_me_title">
-      <h2>Contact</h2>
-      <p>Send me an email</p>
+      <h2>{% trans 'Contact' %}</h2>
+      <p>{% trans 'Send me an email' %}</p>
       <div aria-label="Project grid section">
         <span></span>
       </div>
@@ -113,7 +110,9 @@
       <div class="form-content">
         {% for field in form %}
           <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{field.label}}</label>
+            <label for="{{ field.id_for_label }}">
+              {{field.label}}
+            </label>
             {{ field }}
             {{ field.errors }}
 
@@ -136,7 +135,7 @@
 
       <div class="form-content">
         <div class="form-group">
-          <button class="btn" type="submit">Send</button>
+          <button class="btn" type="submit">{% trans 'Send' %}</button>
         </div>
       </div>
     </form>

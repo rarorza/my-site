@@ -7,8 +7,12 @@
           {% else %}
           <span>{{ experience.start_time | date:'Y' }}-{{ experience.end_time | date:'Y' }}</span>
         {% endif %}
-        <h3>{{ experience.title }}</h3>
-        <p>{{ experience.description }}</p>
+        {% for exp in experiences_translate %}
+        {% if exp.id == experience.id %}
+          <h3>{{ exp.t_title }}</h3>
+          <p>{{ exp.t_description }}</p>
+        {% endif %}
+      {% endfor %}
       </div>
     {% endif %}
   {% endfor %}
